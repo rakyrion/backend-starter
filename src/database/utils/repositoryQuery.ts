@@ -51,10 +51,10 @@ const filter = <Result, IEntity>(query: Query<Result, IEntity>, queryString: Par
 
 			// Case-insensitive
 			if ('ilike' in content) {
-				const variable = content.like as string
+				const variable = content.ilike as string
 				content.$regex = `^${variable}$`
 				content.$options = 'i'
-				delete (queryObject[key] as { like: unknown, [key: string]: unknown }).like
+				delete (queryObject[key] as { ilike: unknown, [key: string]: unknown }).ilike
 			}
 		}
 
