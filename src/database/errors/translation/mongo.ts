@@ -3,11 +3,20 @@ import { IErrorTranslation } from '../../../app/interfaces/errorTranslation'
 import { BadRequestError } from '../../../app/errors/badRequest'
 import { InternalServerError } from '../../../app/errors/internalServer'
 
-
 const translate = (errorTranslation: IErrorTranslation) => {
 	if (errorTranslation.original instanceof MongoError) {
 		if (errorTranslation.original.code === 11000) {
-			errorTranslation.translated = new BadRequestError('', undefined, { document: 'already exists' })
+			const [ , errorCollection ] = errorTranslation.original.message.split(':')
+			const [ , collectionWithDB ] = errorCollection.split('.')
+			const [collection] = collectionWithDB.split(' ')
+			const [ , errorString ] = errorTranslation.original.message.split('dup key: { ')
+			const [field] = errorString.split(':')
+			
+			errorTranslation.translated = new BadRequestError(
+				'',
+				undefined,
+				{ document: 'already exists', field, collection }
+			)
 			return
 		}
 

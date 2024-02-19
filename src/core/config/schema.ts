@@ -96,5 +96,10 @@ export const coreConfigSchema = {
 				default: true
 			}
 		}
+	},
+	timezone: {
+		doc: 'Application default timezone',
+		format: String,
+		default: 'UTC'
 	}
 }

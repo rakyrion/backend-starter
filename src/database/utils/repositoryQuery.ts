@@ -17,7 +17,7 @@ export const repositoryQuery = <Result, IEntity>(
 		const populations = buildPopulations(options.populate)
 		if (populations.length) void query.populate(populations)
 	}
-	
+
 	// Apply query string
 	if (typeof queryString !== 'undefined') {
 		filter(query, queryString)
@@ -25,7 +25,7 @@ export const repositoryQuery = <Result, IEntity>(
 		project(query, queryString)
 		if (!options.skipPagination) paginate(query, queryString)
 	}
-	
+
 	// Leaning
 	void query.lean()
 
@@ -72,7 +72,9 @@ const filter = <Result, IEntity>(query: Query<Result, IEntity>, queryString: Par
 	}
 
 	// TODO: Database operators replacement (pillarlo bien para que no rompa cuando la query no viene del query param)
-	const filteredQuery = JSON.stringify(queryObject).replace(/\[(gt|gte|lt|lte)\]/g, match => `[$${match}]`)
+	const filteredQuery = JSON.stringify(queryObject)
+		.replace(/\[(gt|gte|lt|lte)\]/g, match => `[$${match.slice(1, -1)}]`)
+		.replace(/"(gt|gte|lt|lte)"/g, match => `"$${match.slice(1, -1)}"`)
 
 	// Query filtering
 	const filterQuery = JSON.parse(filteredQuery) as FilterQuery<IEntity>

@@ -30,7 +30,8 @@ declare module '../../config/interfaces/configSchema' {
 				debug: {
 					enable: Schema<boolean>
 				}
-			}
+			},
+			timezone: Schema<string>
 		}
 	}
 }

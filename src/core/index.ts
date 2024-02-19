@@ -1,3 +1,6 @@
+// Application timezone
+import './config/timezone'
+
 // Global logger
 import './services/logger'
 
