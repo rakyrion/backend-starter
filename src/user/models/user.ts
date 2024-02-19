@@ -4,7 +4,7 @@ import { authenticableSchema } from '../../auth/models/schemas/authenticable'
 
 const userSchema = new Schema<IUser>(
 	{
-		...authenticableSchema.obj,
+		...authenticableSchema,
 		username: {
 			type: String,
 			unique: true,
