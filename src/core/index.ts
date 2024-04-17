@@ -10,6 +10,9 @@ import './handlers/uncaughtException'
 // Global events message broker
 import './services/events'
 
+// Global cache storage
+import './services/cache'
+
 // Global Dependency Injection object
 import './services/di'
 
