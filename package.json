@@ -1,6 +1,6 @@
 {
 	"name": "@rakyrion/starter-module",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "API starter project",
 	"main": "dist/index.js",
 	"scripts": {
@@ -12,7 +12,7 @@
 		"lint": "eslint --ext ts,tsx src",
 		"lint:fix": "eslint --ext ts,tsx --fix src",
 		"test": "mocha --recursive --enable-source-maps dist/*/tests",
-		"postinstall": "node ./scripts/postinstall.ts"
+		"postinstall": "node ./scripts/postinstall.js"
 	},
 	"repository": {
 		"type": "git"
