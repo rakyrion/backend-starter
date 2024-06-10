@@ -1,6 +1,6 @@
 /* eslint-disable */
-import fs from 'fs'
-import path from 'path'
+const fs = require('fs');
+const path = require('path');
 
 const filesToMove = ['../src']
 const packageDir = __dirname
