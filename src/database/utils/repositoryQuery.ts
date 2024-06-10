@@ -45,19 +45,38 @@ const filter = <Result, IEntity>(query: Query<Result, IEntity>, queryString: Par
 			// Case-sensitive
 			if ('like' in content) {
 				const variable = content.like as string
-				content.$regex = `^${variable}$`
+
+				// content.$regex = `^${variable}$`
+				content.$regex = `${variable}`
 				delete (queryObject[key] as { like: unknown, [key: string]: unknown }).like
 			}
 
 			// Case-insensitive
 			if ('ilike' in content) {
 				const variable = content.ilike as string
-				content.$regex = `^${variable}$`
+
+				// content.$regex = `^${variable}$`
+				content.$regex = `${variable}`
 				content.$options = 'i'
 				delete (queryObject[key] as { ilike: unknown, [key: string]: unknown }).ilike
 			}
+
+			if ('in' in content) {
+				const variable = content.in as string
+				const inValues = variable.split(',')
+				content.$in = inValues
+				delete (queryObject[key] as { in: unknown, [key: string]: unknown }).in
+			}
+
+			if ('all' in content) {
+				const variable = content.all as string
+				const allValues = variable.split(',')
+				content.$all = allValues
+				delete (queryObject[key] as { all: unknown, [key: string]: unknown }).all
+			}
 		}
 
+		/*
 		// TODO: ¿necesario? Database "in" operator replacement
 		if (key.slice(-4).toLocaleLowerCase() === '[in]') {
 			queryObject[key.slice(0, -4)] = {
@@ -69,12 +88,14 @@ const filter = <Result, IEntity>(query: Query<Result, IEntity>, queryString: Par
 			}
 			delete queryObject[key]
 		}
+		*/
 	}
 
 	// TODO: Database operators replacement (pillarlo bien para que no rompa cuando la query no viene del query param)
 	const filteredQuery = JSON.stringify(queryObject)
 		.replace(/\[(gt|gte|lt|lte)\]/g, match => `[$${match.slice(1, -1)}]`)
 		.replace(/"(gt|gte|lt|lte)"/g, match => `"$${match.slice(1, -1)}"`)
+
 
 	// Query filtering
 	const filterQuery = JSON.parse(filteredQuery) as FilterQuery<IEntity>
