@@ -2,7 +2,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const filesToMove = ['../src']; // Lista de archivos a mover
+const filesToMove = ['../src', '../../tsconfig.json', '../package.json', '../.eslintrc.json', '../.gitignore']; // Lista de archivos a mover
 const packageDir = __dirname; // Carpeta actual
 const rootDir = path.join(packageDir, '../../../'); // Raíz del proyecto
 
