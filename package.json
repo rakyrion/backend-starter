@@ -1,6 +1,6 @@
 {
 	"name": "@rakyrion/starter-module",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"description": "API starter project",
 	"main": "dist/index.js",
 	"scripts": {
