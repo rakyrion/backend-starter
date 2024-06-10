@@ -67,13 +67,6 @@ const filter = <Result, IEntity>(query: Query<Result, IEntity>, queryString: Par
 				content.$in = inValues
 				delete (queryObject[key] as { in: unknown, [key: string]: unknown }).in
 			}
-
-			if ('all' in content) {
-				const variable = content.all as string
-				const allValues = variable.split(',')
-				content.$all = allValues
-				delete (queryObject[key] as { all: unknown, [key: string]: unknown }).all
-			}
 		}
 
 		/*
