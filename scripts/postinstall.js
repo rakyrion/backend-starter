@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const filesToMove = ['archivo1.txt', 'archivo2.txt']; // Lista de archivos a mover
+const filesToMove = ['../src']; // Lista de archivos a mover
 const packageDir = __dirname; // Carpeta actual
 const rootDir = path.join(packageDir, '../../../'); // Raíz del proyecto
 
