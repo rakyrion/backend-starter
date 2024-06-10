@@ -109,3 +109,7 @@ const paginate = <Result, IEntity>(query: Query<Result, IEntity>, queryString: P
 
 	void query.limit(limit).skip(skip)
 }
+
+module.exports = {
+	repositoryQuery
+}
