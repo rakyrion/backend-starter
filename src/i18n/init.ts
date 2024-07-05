@@ -4,7 +4,7 @@ import { ITranslation } from './interfaces/translation'
 
 global.translations = {}
 
-const i18nPath = path.join(__dirname, '../../i18n')
+const i18nPath = path.join(__dirname, '../../../../../i18n')
 
 const i18nImport = async (locale: string): Promise<ITranslation> => {
 	try {

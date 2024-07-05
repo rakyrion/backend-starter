@@ -12,7 +12,7 @@ events.subscribe('applicationStart', async () => {
 	global.config = convict(configSchema as Schema<IConfigSchema>)
 
 	// Folder /config
-	const configPath = path.join(__dirname, '../../config')
+	const configPath = path.join(__dirname, '../../../../../config')
 	
 	// Load default configuration
 	try {

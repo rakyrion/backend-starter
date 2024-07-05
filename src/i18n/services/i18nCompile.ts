@@ -5,8 +5,8 @@ import { ITranslation } from '../interfaces/translation'
 
 export const i18nCompileService = async (locale: string): Promise<void> => {
 	// Folders
-	const srcPath = path.join(__dirname, '../../../src')
-	const i18nPath = path.join(__dirname, '../../../i18n')
+	const srcPath = path.join(__dirname, '../../../../../../src')
+	const i18nPath = path.join(__dirname, '../../../../../../i18n')
 
 	// Translation object
 	const translation: ITranslation = {}
