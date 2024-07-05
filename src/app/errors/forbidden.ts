@@ -9,3 +9,7 @@ export class ForbiddenError extends AppError {
 		super(message, 403, errorCode, data || { resource: 'forbidden' })
 	}
 }
+
+module.exports = {
+	ForbiddenError
+}

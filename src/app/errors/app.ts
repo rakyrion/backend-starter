@@ -15,3 +15,7 @@ export abstract class AppError extends OperationalError {
 		Error.captureStackTrace(this, this.constructor)
 	}
 }
+
+module.exports = {
+	AppError
+}

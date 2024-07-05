@@ -19,3 +19,7 @@ export class InternalServerError extends AppError {
 		this.originalError.stack = originalError?.stack
 	}
 }
+
+module.exports = {
+	InternalServerError
+}

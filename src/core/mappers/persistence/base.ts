@@ -17,3 +17,7 @@ export abstract class BasePersistenceMapper<T extends IEntity> implements IPersi
 		return this._toDB(entity)
 	}
 }
+
+module.exports = {
+	BasePersistenceMapper
+}

@@ -133,3 +133,7 @@ export abstract class BaseRepository<T extends IEntity> implements IBaseReposito
 		await this.model.deleteMany({}, { session })
 	}
 }
+
+module.exports = {
+	BaseRepository
+}

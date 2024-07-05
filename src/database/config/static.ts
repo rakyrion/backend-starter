@@ -24,3 +24,7 @@ try {
 databaseConfig.validate({ output: () => { /* silence */ } })
 
 export { databaseConfig }
+
+module.exports = {
+	databaseConfig
+}

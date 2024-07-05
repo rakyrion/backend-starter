@@ -11,3 +11,7 @@ export abstract class BaseDtoMapper<T, DTO> implements IDtoMapper<T, DTO> {
 		}
 	}
 }
+
+module.exports = {
+	BaseDtoMapper
+}

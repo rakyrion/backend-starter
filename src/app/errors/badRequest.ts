@@ -9,3 +9,7 @@ export class BadRequestError extends AppError {
 		super(message, 400, errorCode, data)
 	}
 }
+
+module.exports = {
+	BadRequestError
+}

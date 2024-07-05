@@ -9,3 +9,7 @@ export class NotFoundError extends AppError {
 		super(message, 404, errorCode, data || { resource: 'not found' })
 	}
 }
+
+module.exports = {
+	NotFoundError
+}
