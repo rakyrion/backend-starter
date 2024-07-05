@@ -7,8 +7,7 @@ const configSchema = { core: coreConfigSchema }
 const coreConfig = convict(configSchema)
 
 // Folder /config
-const configPath = path.join(__dirname, '../../../../../../../config')
-console.log('configPath', `dirname: ${__dirname}`, configPath)
+const configPath = path.join(__dirname, '../../../../../../config')
 
 // Load default configuration
 try {
