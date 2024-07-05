@@ -13,7 +13,8 @@ events.subscribe('applicationStart', async () => {
 
 	// Folder /config
 	const configPath = path.join(__dirname, '../../../../../config')
-	
+	console.log('configPath', configPath)
+
 	// Load default configuration
 	try {
 		config.loadFile(`${configPath}/config.json`)

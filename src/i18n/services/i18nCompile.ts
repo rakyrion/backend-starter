@@ -7,6 +7,8 @@ export const i18nCompileService = async (locale: string): Promise<void> => {
 	// Folders
 	const srcPath = path.join(__dirname, '../../../../../../src')
 	const i18nPath = path.join(__dirname, '../../../../../../i18n')
+	console.log('srcPath', srcPath)
+	console.log('i18nPath', i18nPath)
 
 	// Translation object
 	const translation: ITranslation = {}

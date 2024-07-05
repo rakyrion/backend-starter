@@ -5,7 +5,7 @@ import { ITranslation } from './interfaces/translation'
 global.translations = {}
 
 const i18nPath = path.join(__dirname, '../../../../../i18n')
-
+console.log('i18nPath', i18nPath)
 const i18nImport = async (locale: string): Promise<ITranslation> => {
 	try {
 		const fileContents = await fs.readFile(`${i18nPath}/${locale}.json`, 'utf8')
