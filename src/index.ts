@@ -5,5 +5,3 @@ export * from './core/exports'
 
 // Run express application by default
 import './app'
-
-log.info('VERSION 27')
