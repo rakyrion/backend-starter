@@ -29,7 +29,3 @@ export class DatabaseTransaction implements IDatabaseTransaction<ClientSession> 
 		return this.session
 	}
 }
-
-module.exports = {
-	DatabaseTransaction
-}

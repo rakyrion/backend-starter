@@ -1,13 +1,9 @@
 {
 	"name": "@rakyrion/starter-module",
-	"version": "0.0.22",
+	"version": "0.0.23",
 	"description": "API starter project",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"exports": {
-		".": "./dist/index.js",
-		"./database/*": "./dist/database/*.js"
-	},
 	"scripts": {
 		"start": "nodemon dist",
 		"clean": "rm -Rf dist",
