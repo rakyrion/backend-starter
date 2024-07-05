@@ -17,7 +17,3 @@ export const validateFields = reqCatch((req, res, next) => {
 	})
 	throw new BadRequestError('', undefined, data)
 })
-
-module.exports = {
-	validateFields
-}

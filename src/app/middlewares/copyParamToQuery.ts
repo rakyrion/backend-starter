@@ -5,7 +5,3 @@ export const copyParamToQuery = (
 	req.query[nameInQuery || param] = req.params[param]
 	return next()
 })
-
-module.exports = {
-	copyParamToQuery
-}

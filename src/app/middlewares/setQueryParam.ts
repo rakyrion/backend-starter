@@ -7,7 +7,3 @@ export const setQueryParam = (
 	req.query[param] = value
 	return next()
 })
-
-module.exports = {
-	setQueryParam
-}

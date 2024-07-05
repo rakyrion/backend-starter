@@ -3,7 +3,3 @@ export enum EJsendStatus {
 	FAIL = 'fail',
 	ERROR = 'error'
 }
-
-module.exports = {
-	EJsendStatus
-}
