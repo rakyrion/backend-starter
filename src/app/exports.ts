@@ -1,3 +1,5 @@
+import './utils/reqCatch'
+
 export * from './errors/app'
 export * from './errors/badRequest'
 export * from './errors/notFound'
